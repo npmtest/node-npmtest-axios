@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!doctype html>
+<html lang="en">
+<head>
     <title>Code coverage report for node-npmtest-axios/axios/lib/defaults.js</title>
     <meta charset="utf-8">
     <style>
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-axios/axios/lib/</a> » defaults.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-axios/axios/lib/</a> &#187; defaults.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -407,18 +409,18 @@ var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
 };
 &nbsp;
-<span class="fstat-no" title="function not covered">function setContentTypeIfUnset(headers, value) {</span>
-<span class="cstat-no" title="statement not covered">  if (!utils.isUndefined(headers) &amp;&amp; utils.isUndefined(headers['Content-Type'])) {</span>
-<span class="cstat-no" title="statement not covered">    headers['Content-Type'] = value;</span>
+<span class="fstat-no" title="function not covered" >function setContentTypeIfUnset(headers, value) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!utils.isUndefined(headers) &amp;&amp; utils.isUndefined(headers['Content-Type'])) {</span>
+<span class="cstat-no" title="statement not covered" >    headers['Content-Type'] = value;</span>
   }
 }
 &nbsp;
 function getDefaultAdapter() {
   var adapter;
-  <span class="missing-if-branch" title="if path not taken">I</span>if (typeof XMLHttpRequest !== 'undefined') {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-<span class="cstat-no" title="statement not covered">    adapter = require('./adapters/xhr');</span>
-  } else <span class="missing-if-branch" title="else path not taken">E</span>if (typeof process !== 'undefined') {
+<span class="cstat-no" title="statement not covered" >    adapter = require('./adapters/xhr');</span>
+  } else <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof process !== 'undefined') {
     // For node use HTTP adapter
     adapter = require('./adapters/http');
   }
@@ -428,39 +430,39 @@ function getDefaultAdapter() {
 var defaults = {
   adapter: getDefaultAdapter(),
 &nbsp;
-  transformRequest: [<span class="fstat-no" title="function not covered">function transformRequest(data, headers) {</span>
-<span class="cstat-no" title="statement not covered">    normalizeHeaderName(headers, 'Content-Type');</span>
-<span class="cstat-no" title="statement not covered">    if (utils.isFormData(data) ||</span>
+  transformRequest: [<span class="fstat-no" title="function not covered" >function transformRequest(data, headers) {</span>
+<span class="cstat-no" title="statement not covered" >    normalizeHeaderName(headers, 'Content-Type');</span>
+<span class="cstat-no" title="statement not covered" >    if (utils.isFormData(data) ||</span>
       utils.isArrayBuffer(data) ||
       utils.isBuffer(data) ||
       utils.isStream(data) ||
       utils.isFile(data) ||
       utils.isBlob(data)
     ) {
-<span class="cstat-no" title="statement not covered">      return data;</span>
+<span class="cstat-no" title="statement not covered" >      return data;</span>
     }
-<span class="cstat-no" title="statement not covered">    if (utils.isArrayBufferView(data)) {</span>
-<span class="cstat-no" title="statement not covered">      return data.buffer;</span>
+<span class="cstat-no" title="statement not covered" >    if (utils.isArrayBufferView(data)) {</span>
+<span class="cstat-no" title="statement not covered" >      return data.buffer;</span>
     }
-<span class="cstat-no" title="statement not covered">    if (utils.isURLSearchParams(data)) {</span>
-<span class="cstat-no" title="statement not covered">      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');</span>
-<span class="cstat-no" title="statement not covered">      return data.toString();</span>
+<span class="cstat-no" title="statement not covered" >    if (utils.isURLSearchParams(data)) {</span>
+<span class="cstat-no" title="statement not covered" >      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');</span>
+<span class="cstat-no" title="statement not covered" >      return data.toString();</span>
     }
-<span class="cstat-no" title="statement not covered">    if (utils.isObject(data)) {</span>
-<span class="cstat-no" title="statement not covered">      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');</span>
-<span class="cstat-no" title="statement not covered">      return JSON.stringify(data);</span>
+<span class="cstat-no" title="statement not covered" >    if (utils.isObject(data)) {</span>
+<span class="cstat-no" title="statement not covered" >      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');</span>
+<span class="cstat-no" title="statement not covered" >      return JSON.stringify(data);</span>
     }
-<span class="cstat-no" title="statement not covered">    return data;</span>
+<span class="cstat-no" title="statement not covered" >    return data;</span>
   }],
 &nbsp;
-  transformResponse: [<span class="fstat-no" title="function not covered">function transformResponse(data) {</span>
+  transformResponse: [<span class="fstat-no" title="function not covered" >function transformResponse(data) {</span>
     /*eslint no-param-reassign:0*/
-<span class="cstat-no" title="statement not covered">    if (typeof data === 'string') {</span>
-<span class="cstat-no" title="statement not covered">      try {</span>
-<span class="cstat-no" title="statement not covered">        data = JSON.parse(data);</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof data === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >      try {</span>
+<span class="cstat-no" title="statement not covered" >        data = JSON.parse(data);</span>
       } catch (e) { /* Ignore */ }
     }
-<span class="cstat-no" title="statement not covered">    return data;</span>
+<span class="cstat-no" title="statement not covered" >    return data;</span>
   }],
 &nbsp;
   timeout: 0,
@@ -470,8 +472,8 @@ var defaults = {
 &nbsp;
   maxContentLength: -1,
 &nbsp;
-  validateStatus: <span class="fstat-no" title="function not covered">function validateStatus(status) {</span>
-<span class="cstat-no" title="statement not covered">    return status &gt;= 200 &amp;&amp; status &lt; 300;</span>
+  validateStatus: <span class="fstat-no" title="function not covered" >function validateStatus(status) {</span>
+<span class="cstat-no" title="statement not covered" >    return status &gt;= 200 &amp;&amp; status &lt; 300;</span>
   }
 };
 &nbsp;
@@ -492,11 +494,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 module.exports = defaults;
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 05:27:19 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 21:46:35 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
